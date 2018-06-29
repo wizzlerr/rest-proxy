@@ -6,7 +6,8 @@
 
     <groupId>wizzlerr</groupId>
     <artifactId>rest-proxy</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <name>rest-proxy</name>
     <description>Configurable rest proxy for hiding service layers, basic authentication and network data + stats
@@ -20,13 +21,12 @@
     </parent>
 
     <properties>
+        <java.version>1.9</java.version>
+
         <lombok.version>1.18.0</lombok.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.9</java.version>
-        <log4j-core.version>2.11.0</log4j-core.version>
-        <log4j-api.version>2.11.0</log4j-api.version>
-        <log4j-slf4j-impl.version>2.11.0</log4j-slf4j-impl.version>
+        <logback-classic.version>1.2.3</logback-classic.version>
     </properties>
 
     <dependencies>
@@ -46,21 +46,19 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j-core.version}</version>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback-classic.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j-api.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>${log4j-slf4j-impl.version}</version>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -71,5 +69,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
