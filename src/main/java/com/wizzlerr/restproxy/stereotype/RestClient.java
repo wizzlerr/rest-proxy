@@ -3,5 +3,5 @@ package com.wizzlerr.restproxy.stereotype;
 import org.springframework.stereotype.Component;
 
 @Component
-public @interface Router {
+public @interface RestClient {
 }
